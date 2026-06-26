@@ -1,0 +1,10 @@
+services:
+  image:
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=${XAUTHORITY}
+    network_mode: "host"
+    volumes:
+      - ${XAUTHORITY}:${XAUTHORITY}
+      - /etc/passwd:/etc/passwd:ro
